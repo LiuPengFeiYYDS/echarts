@@ -7,11 +7,60 @@
 <script>
 export default {
   data() {
-    return {};
+    return {
+      // 存放的初始化数据
+      chartInstane: null,
+      // 从服务器上面获取到的所有数据
+      allData: null,
+    };
   },
-  methods: {},
+  // 取消事件的监听
+  destroyed() {
+    // 使用removeEventListener取消
+    window.removeEventListener("resize",thsi.screenAdapter)
+  },
+  methods: {
+    // 初始图表化实例对象
+    initChart() {
+      //赋值给chartInstane初始化对象值
+      this.chartInstane = this.$echarts.init(this.$refs.hot_ref);
+      const initOption = {};
+      this.chartInstane.setOption(initOption);
+    },
+    //  获取用户的数据
+    async getData() {
+      // 使用this.$http.get()获取后台的数据
+      // 对allData进行赋值
+      // 调用更新图表的数据
+      this.updateChart();
+    },
+    // 处理更新后图标的数据
+    updateChart() {
+      // 用来处理数据
+      const dataOption = {};
+      this.chartInstane.setOption(dataOption);
+    },
+    // 适配器大小的监听
+    screenAdapter() {
+      // 设置一个空的用来处理适配的方案
+      const adapterOption = {};
+      // 吧定义好的数据存放到adapterOption
+      this.chartInstane.setOption(adapterOption);
+    },
+  },
   created() {},
-  mounted() {},
+  mounted() {
+    // 调用初始化的图表数据
+    this.initChart();
+    // 在调用用户的数据
+    this.getData();
+    // 使用window监听适配
+    window.addEventListener("resize", this.screenAdapter);
+    // 主动触发屏幕大小的适配
+    this.screenAdapter()
+    // 完成屏幕适配需要再次调用
+    this.chartInstane.resize()
+  },
   components: {},
   computed: {},
   watch: {},
