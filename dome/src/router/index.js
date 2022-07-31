@@ -13,6 +13,26 @@ const routes = [
     path: '/trend',
     name: 'trend',
     component: () => import('../views/TrendPage.vue')
+  },
+  {
+    path: '/hot',
+    name: 'hot',
+    component: () => import('../views/HotPage.vue')
+  },
+  {
+    path: '/Pank',
+    name: 'Pank',
+    component: () => import('../views/RankPage.vue')
+  },
+  {
+    path: '/Map',
+    name: 'Map',
+    component: () => import('../views/MapPage.vue')
+  },
+  {
+    path: '/ScreenPage',
+    name: 'ScreenPage',
+    component: () => import('../views/ScreenPage.vue')
   }
 ]
 
