@@ -20,8 +20,8 @@ const routes = [
     component: () => import('../views/HotPage.vue')
   },
   {
-    path: '/Pank',
-    name: 'Pank',
+    path: '/Rank',
+    name: 'Rank',
     component: () => import('../views/RankPage.vue')
   },
   {
@@ -33,6 +33,11 @@ const routes = [
     path: '/ScreenPage',
     name: 'ScreenPage',
     component: () => import('../views/ScreenPage.vue')
+  },
+  {
+    path: '/Stock',
+    name: 'Stock',
+    component: () => import('../views/StockPage.vue')
   }
 ]
 
