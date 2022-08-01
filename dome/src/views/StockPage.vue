@@ -1,6 +1,6 @@
 <template>
   <div class="com-page">
-    <!-- 第一块内容横向柱状图 -->
+    <!-- 圆环图 -->
     <Stock></Stock>
   </div>
 </template>

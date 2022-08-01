@@ -110,7 +110,6 @@ export default {
     },
     getData (ret) {
       // 获取服务器的数据, 对this.allData进行赋值之后, 调用updateChart方法更新图表
-      // const { data: ret } = await this.$http.get('hotproduct')
       this.allData = ret
       console.log(this.allData)
       this.updateChart()

@@ -6,6 +6,11 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
+    name: 'ScreenPage',
+    component: () => import('../views/ScreenPage.vue')
+  },
+  {
+    path: '/seller',
     name: 'seller',
     component: () => import('../views/sellerPage.vue')
   },
@@ -28,11 +33,6 @@ const routes = [
     path: '/Map',
     name: 'Map',
     component: () => import('../views/MapPage.vue')
-  },
-  {
-    path: '/ScreenPage',
-    name: 'ScreenPage',
-    component: () => import('../views/ScreenPage.vue')
   },
   {
     path: '/Stock',

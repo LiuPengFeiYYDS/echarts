@@ -25,7 +25,7 @@ export default {
       //赋值给chartInstane初始化对象值
       //注意要获取到dom元素根据设置的ref需要加$refs不然会报错
       this.chartInstane = this.$echarts.init(this.$refs.hot_ref);
-      // 初始化图表的配置
+      // 初始化图表的配置，配置图表是什么类型和其他的配置项
       const initOption = {};
       // 吧初始化图表赋值给initOption
       this.chartInstane.setOption(initOption);
@@ -42,7 +42,7 @@ export default {
     },
     // 处理更新后图标的数据
     updateChart() {
-      // 用来处理数据
+      // 用来处理数据只存放数据
       const dataOption = {};
       this.chartInstane.setOption(dataOption);
     },
